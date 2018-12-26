@@ -11,4 +11,14 @@ mkdir ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
+if [ $(dpkg-query -W --showformat='${Status}\n' vim |grep "install ok installed") -eq 0 ];
+then
+    echo "Vim not found. Installing ..."
+    sudo apt-get --yes install vim;
+fi
 
+if [ $(dpkg-query -W --showformat='${Status}\n' tmux |grep "install ok installed") -eq 0 ];
+then
+    echo "Tmux not found. Installing ..."
+    sudo apt-get --yes install tmux;
+fi
