@@ -174,6 +174,9 @@ set ai "Auto indent
 set wrap "Wrap lines
 set cino=N-s "Ignore namespace indentation
 
+"Indent the whole file and go back to cursor
+nnoremap <F5> gg=G``
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
