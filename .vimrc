@@ -172,7 +172,8 @@ set tw=500
 set ai "Auto indent
 "set si "Smart indent
 set wrap "Wrap lines
-set cino=N-s "Ignore namespace indentation
+set cino+=N-s "Ignore namespace indentation
+set cino+=g0,+0 "Correct template indent
 
 "Indent the whole file and go back to cursor
 nnoremap <F5> gg=G``
