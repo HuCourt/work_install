@@ -310,6 +310,9 @@ map <leader>s? z=
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Quit when a file is opened
+let g:NERDTreeQuitOnOpen = 1
+
 "Toggle shortcut
 map <C-x> :NERDTreeToggle<CR>
 
