@@ -176,15 +176,7 @@ set cino+=N-s "Ignore namespace indentation
 set cino+=g0,+0,t0 "Correct template indent
 
 "Indent the whole file and go back to cursor
-nnoremap <F5> gg=G``
-
-"Call clang-format on save
-function! Formatonsave()
-  let l:formatdiff = 1
-  pyf ~/llvm/tools/clang/tools/clang-format/clang-format.py
-endfunction
-autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
-
+nnoremap <F5> :Autoformat<CR>
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
