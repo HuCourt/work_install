@@ -70,6 +70,8 @@ install_package vim
 install_package tmux
 #For bringing to forefront
 install_package wmctrl
+#For formatting
+install_package clang-format
 
 
 add_kb "Bring_browser_ff" "$(pwd)/bring_forefront.sh firefox" "<Control>b"
