@@ -58,6 +58,17 @@ ${kb_init_command} binding "${KB_BIND}"
 ln -sf $(pwd)/.vimrc ~/.vimrc 
 ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
 
+install_package git
+#For auto complete me
+install_package python3-dev
+install_package vim
+#Terminal multiplexer
+install_package tmux
+#For bringing to forefront
+install_package wmctrl
+#For formatting
+install_package clang-format
+
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -67,17 +78,10 @@ git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouComplet
 git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
 
 (
-    cd ~/.vim/bundle/YouCompleteMe && python3 install.py
+    cd ~/.vim/bundle/YouCompleteMe
+    git submodule update --init --recursive
+    python3 install.py
 )
-
-install_package vim
-#Terminal multiplexer
-install_package tmux
-#For bringing to forefront
-install_package wmctrl
-#For formatting
-install_package clang-format
-
 
 add_kb "Bring_browser_ff" "$(pwd)/bring_forefront.sh firefox" "<Control>b"
 add_kb "Bring_terminal_ff" "$(pwd)/bring_forefront.sh gnome-terminal-server" "<Control>t"
