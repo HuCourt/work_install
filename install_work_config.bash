@@ -66,6 +66,10 @@ git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/bundle/vi
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
 
+(
+    cd ~/.vim/bundle/YouCompleteMe && python3 install.py
+)
+
 install_package vim
 #Terminal multiplexer
 install_package tmux
