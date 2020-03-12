@@ -156,24 +156,32 @@ set noswapfile
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+" set expandtab
 
 " Be smart when using tabs ;)
-set smarttab
+" set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 8 spaces
+set shiftwidth=8
+set tabstop=8
+set softtabstop=8
 
 " Linebreak on 500 characters
 set lbr
 set tw=500
 
-set ai "Auto indent
+"set ai "Auto indent
 "set si "Smart indent
 set wrap "Wrap lines
 set cino+=N-s "Ignore namespace indentation
 set cino+=g0,+0,t0 "Correct template indent
+
+" show tabs
+set listchars=tab:\|\ 
+highlight SpecialKey ctermfg=8
+" show bad chars
+set listchars+=nbsp:X
+set list
 
 "Indent the whole file and go back to cursor
 nnoremap <F5> :Autoformat<CR>
