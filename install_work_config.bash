@@ -57,6 +57,7 @@ ${kb_init_command} binding "${KB_BIND}"
 }
 ln -sf $(pwd)/.vimrc ~/.vimrc 
 ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
+ln -sf $(pwd)/OpenTermSetup.bash ~/OpenTermSetup.bash
 
 install_package git
 #For auto complete me
@@ -76,6 +77,7 @@ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/bundle/vim-tmux-navigator
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
+git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
 
 (
     cd ~/.vim/bundle/YouCompleteMe
@@ -85,3 +87,4 @@ git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autofo
 
 add_kb "Bring_browser_ff" "$(pwd)/bring_forefront.sh firefox" "<Control>b"
 add_kb "Bring_terminal_ff" "$(pwd)/bring_forefront.sh gnome-terminal-server" "<Control>t"
+add_kb "Clear terminal" "$(pwd)/clearterm" "<Control>p"
