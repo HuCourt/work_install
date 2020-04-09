@@ -8,6 +8,7 @@ then
 cd "Documents/slam"
 tmux new-session -s $session -d
 tmux split-window -h
+tmux send-keys -t $session:1 'birdtray&' C-m
 tmux new-window
 tmux send-keys -t $session:2 'vim' C-m
 tmux select-window -t 1
