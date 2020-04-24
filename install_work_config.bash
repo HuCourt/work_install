@@ -57,6 +57,7 @@ ${kb_init_command} binding "${KB_BIND}"
 }
 ln -sf $(pwd)/.vimrc ~/.vimrc 
 ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
+ln -sf $(pwd)/.inputrc ~/.inputrc
 ln -sf $(pwd)/OpenTermSetup.bash ~/OpenTermSetup.bash
 
 install_package git
