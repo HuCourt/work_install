@@ -70,6 +70,8 @@ install_package tmux
 install_package wmctrl
 #For formatting
 install_package clang-format
+#For tags
+install_package ctags
 
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle

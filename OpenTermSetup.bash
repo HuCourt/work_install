@@ -5,7 +5,7 @@ SESSIONEXISTS=$(tmux list-sessions | grep $session)
 
 if [ "$SESSIONEXISTS" = "" ]
 then
-cd "Documents/slam"
+cd "Documents/argos"
 tmux new-session -s $session -d
 tmux split-window -h
 tmux send-keys -t $session:1 'birdtray&' C-m

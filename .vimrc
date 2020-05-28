@@ -342,6 +342,11 @@ let g:ycm_goto_buffer_command = 'vertical-split'
 let g:tmux_navigator_save_on_switch = 2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CTags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=tags
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
