@@ -327,7 +327,7 @@ map <C-x> :NERDTreeToggle<CR>
 " => YouCompleteMe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap the GoTo function
-noremap <leader>e :YcmCompleter GoTo<CR>
+" noremap <leader>e :YcmCompleter GoTo<CR> : now using ctags
 
 "Autoclose the preview window when quitting insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -345,6 +345,12 @@ let g:tmux_navigator_save_on_switch = 2
 " => CTags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tags=tags
+" Ctrl-F12 to regenerate tags
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" Open tag in new tab
+map <leader>e :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Open tags in new vertical split
+map <leader>s :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
