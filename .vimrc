@@ -330,10 +330,29 @@ map <C-x> :NERDTreeToggle<CR>
 " noremap <leader>e :YcmCompleter GoTo<CR> : now using ctags
 
 "Autoclose the preview window when quitting insert mode
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "Open the goto in a split
-let g:ycm_goto_buffer_command = 'vertical-split'
+" let g:ycm_goto_buffer_command = 'vertical-split'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocomplete with CTAGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use tab to look through completion
+set omnifunc=syntaxcomplete#Complete
+function! InsertTabWrapper()
+	if pumvisible()
+		return "\<c-n>"
+	endif
+	let col = col('.') - 1
+	if !col || getline('.')[col - 1] !~ '\k'
+		return "\<tab>"
+	else
+		return "\<c-x>\<c-o>"
+	endif
+endfunction
+inoremap <expr><tab> InsertTabWrapper()
+inoremap <expr><s-tab> pumvisible()?"\<c-p>":"\<c-d>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-tmux-navigator
@@ -345,7 +364,7 @@ let g:tmux_navigator_save_on_switch = 2
 " => CTags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tags=tags
-" Ctrl-F12 to regenerate tags
+" F12 to regenerate tags
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " Open tag in new tab
 map <leader>e :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
